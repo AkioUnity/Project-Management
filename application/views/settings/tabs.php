@@ -8,7 +8,7 @@ $settings_menu = array(
         array("name" => "cron_job", "url" => "settings/cron_job"),
         array("name" => "notifications", "url" => "settings/notifications"),
         array("name" => "integration", "url" => "settings/integration"),
-        array("name" => "updates", "url" => "Updates"),
+//        array("name" => "updates", "url" => "Updates"),
     ),
     "access_permission" => array(
         array("name" => "roles", "url" => "roles"),

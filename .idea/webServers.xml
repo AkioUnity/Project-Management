@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a297b2e1-39e5-49c8-b353-87d3fef26528" name="pm.ineedadeveloper.com" url="http://pm.ineedadeveloper.com">
+        <fileTransfer host="pm.ineedadeveloper.com" port="22" privateKey="E:\work\Project_Management\INaD-PM.ppk" rootFolder="/var/www/html" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

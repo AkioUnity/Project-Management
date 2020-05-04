@@ -8,6 +8,8 @@
 
             foreach ($sidebar_menu as $main_menu) {
                 if (isset($main_menu["name"])) {
+                    if ($main_menu['name']=="items")
+                        continue;
                     $submenu = get_array_value($main_menu, "submenu");
                     $expend_class = $submenu ? " expand " : "";
                     $active_class = isset($main_menu["is_active_menu"]) ? "active" : "";

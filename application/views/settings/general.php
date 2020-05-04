@@ -312,22 +312,22 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="item_purchase_code" class=" col-md-2"><?php echo lang('item_purchase_code'); ?></label>
-                        <div class=" col-md-10">
-                            <?php
-                            echo form_input(array(
-                                "id" => "item_purchase_code",
-                                "name" => "item_purchase_code",
-                                "value" => get_setting('item_purchase_code') ? "******" : "",
-                                "class" => "form-control",
-                                "placeholder" => "Envato Purchase Code",
-                                "data-rule-required" => true,
-                                "data-msg-required" => lang("field_required"),
-                            ));
-                            ?>
-                        </div>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <label for="item_purchase_code" class=" col-md-2">--><?php //echo lang('item_purchase_code'); ?><!--</label>-->
+<!--                        <div class=" col-md-10">-->
+<!--                            --><?php
+//                            echo form_input(array(
+//                                "id" => "item_purchase_code",
+//                                "name" => "item_purchase_code",
+//                                "value" => get_setting('item_purchase_code') ? "******" : "",
+//                                "class" => "form-control",
+//                                "placeholder" => "Envato Purchase Code",
+//                                "data-rule-required" => true,
+//                                "data-msg-required" => lang("field_required"),
+//                            ));
+//                            ?>
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="form-group">
                         <label for="show_theme_color_changer" class=" col-md-2"><?php echo lang('show_theme_color_changer'); ?></label>
