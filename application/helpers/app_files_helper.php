@@ -537,7 +537,7 @@ if (!function_exists('validate_post_file')) {
         if (is_valid_file_to_upload($file_name)) {
             echo json_encode(array("success" => true));
         } else {
-            echo json_encode(array("success" => false, 'message' => lang('invalid_file_type') . " ($file_name)"));
+            echo json_encode(array("success" => false, 'message' => lang('invalid_file_type') . " ($file_name)"."<br> Allowed file types are ".get_setting("accepted_file_formats")));
         }
     }
 

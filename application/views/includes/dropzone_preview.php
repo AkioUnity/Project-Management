@@ -1,3 +1,7 @@
+<div class="upload-info">
+    Files must be less than <b>2 MB</b>. <br>
+    Allowed file types: <b><?php echo get_setting("accepted_file_formats")?></b>.
+</div>
 <div class="post-file-dropzone-scrollbar hide">
     <div class="post-file-previews clearfix b-t"> 
         <div class="post-file-upload-row dz-image-preview dz-success dz-complete pull-left">
