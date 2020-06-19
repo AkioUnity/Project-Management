@@ -33,6 +33,20 @@ class Users_model extends Crud_model {
         }
     }
 
+    function authenticateToken($token) {
+
+        $this->db->select("id,user_type,client_id,password");
+        $result = $this->db->get_where($this->table, array('token' => $token));
+
+        if ($result->num_rows() !== 1) {
+            return false;
+        }
+
+        $user_info = $result->row();
+        $this->session->set_userdata('user_id', $user_info->id);
+        return true;
+    }
+
     private function _client_can_login($user_info) {
         //check client login settings
         if ($user_info->user_type === "client" && get_setting("disable_client_login")) {

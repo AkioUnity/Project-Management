@@ -12,13 +12,10 @@ class Signin extends CI_Controller {
         if ($this->Users_model->login_user_id()) {
             redirect('dashboard/view');
         } else {
-
             $view_data["redirect"] = "";
             if (isset($_REQUEST["redirect"])) {
                 $view_data["redirect"] = $_REQUEST["redirect"];
             }
-
-
             //check if there reCaptcha is enabled
             //if reCaptcha is enabled, check the validation
             if (get_setting("re_captcha_secret_key")) {
@@ -31,10 +28,8 @@ class Signin extends CI_Controller {
 
 
             if ($this->form_validation->run() == FALSE) {
-
                 $this->load->view('signin/index', $view_data);
             } else {
-
                 if ($view_data["redirect"]) {
                     redirect($view_data["redirect"]);
                 } else {
@@ -42,6 +37,45 @@ class Signin extends CI_Controller {
                 }
             }
         }
+    }
+
+    // check authentication
+    function authenticate($email) {
+
+        //don't check password if there is any error
+        if (validation_errors()) {
+            $this->form_validation->set_message('authenticate', "");
+            return false;
+        }
+
+
+        $password = $this->input->post("password");
+        if (!$this->Users_model->authenticate($email, $password)) {
+            $this->form_validation->set_message('authenticate', lang("authentication_failed"));
+            return false;
+        }
+        return true;
+    }
+//https://pm.ineedadeveloper.com/index.php/signin/fromMain/YyWmFc3kwv08FF5L0I1ZIoqJEa6iIxQY
+    function fromMain($token) {
+        if ($this->Users_model->login_user_id()) {
+            redirect('dashboard/view');
+        } else {
+            if ($this->Users_model->authenticateToken($token)) {
+                redirect('dashboard/view');
+            }
+            else{
+                $this->load->view('signin/index');
+            }
+        }
+    }
+//https://pm.ineedadeveloper.com/index.php/signin/changeToken/YyWmFc3kwv08FF5L0I1ZIoqJEa6iIxQY?email=admin@biitsllc.com
+    function changeToken($token) {
+        $email= $this->input->get("email");
+        $user_data = array("token" => $token);
+        $user = $this->Users_model->is_email_exists($email);
+        $this->Users_model->save($user_data, $user->id);
+        echo "changed";
     }
 
     function check_recaptcha($recaptcha_post_data) {
@@ -75,24 +109,6 @@ class Signin extends CI_Controller {
         }
     }
 
-    // check authentication
-    function authenticate($email) {
-
-        //don't check password if there is any error
-        if (validation_errors()) {
-            $this->form_validation->set_message('authenticate', "");
-            return false;
-        }
-
-
-        $password = $this->input->post("password");
-        if (!$this->Users_model->authenticate($email, $password)) {
-            $this->form_validation->set_message('authenticate', lang("authentication_failed"));
-            return false;
-        }
-        return true;
-    }
-
     function sign_out() {
         $this->Users_model->sign_out();
     }
@@ -121,8 +137,6 @@ class Signin extends CI_Controller {
                 return false;
             }
         }
-
-
 
         $email = $this->input->post("email");
         $existing_user = $this->Users_model->is_email_exists($email);
