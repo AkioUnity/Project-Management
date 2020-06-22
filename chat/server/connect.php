@@ -1,9 +1,9 @@
 <?php
 
 $servername = 'localhost';
-$database = '';
-$username = '';
-$password = '';
+$database = 'pm';
+$username = 'root';
+$password = 'ajrnskak10';
 $charset = 'utf8mb4';
 $dbPrefix = 'lsv_';
 $pasPhrase = '';

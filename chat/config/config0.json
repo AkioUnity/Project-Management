@@ -1,0 +1,69 @@
+{
+    "agentName": "Video Chat Representative",
+    "agentAvatar": "../img/avatar.png",
+    "chromePluginId": "nphkdpfdiidjglfcplkpkdjpdlpmkdpg",
+    "smartVideoLanguage": "en_US",
+    "anonVisitor": "Visitor",
+    "entryForm": {
+        "enabled": true,
+        "required": false,
+        "private": false,
+        "showEmail": false,
+        "showAvatar": false
+    },
+    "appWss": "https://pm.ineedadeveloper.com:9001/",
+    "recording": {
+        "enabled": false,
+        "download": false,
+        "saveServer": false,
+        "autoStart": false,
+        "screen": false,
+        "oneWay": false,
+        "transcode": false
+    },
+    "whiteboard": {
+        "enabled": false,
+        "allowAnonymous": false
+    },
+    "transcribe": {
+        "enabled": false,
+        "language": "en",
+        "languageTo": "",
+        "apiKey": "",
+        "direction": "agent"
+    },
+    "videoScreen": {
+        "chat": false,
+        "autoAcceptAudio": false,
+        "autoAcceptVideo": false,
+        "greenRoom": false,
+        "waitingRoom": false,
+        "onlyAgentButtons": false,
+        "videoContainerStyle": "conference",
+        "videoConference": true,
+        "getSnapshot": false,
+        "separateScreenShare": false,
+        "broadcastAttendeeVideo": false,
+        "allowOtherSee": false,
+        "enableLogs": false,
+        "primaryCamera": "user",
+        "videoFileStream": false,
+        "screenConstraint" : {"maxWidth": 1920, "maxHeight": 1080}
+    },
+    "serverSide": {
+        "loginForm": false,
+        "chatHistory": false,
+        "agentInfo": false,
+        "token": false,
+        "feedback": false,
+        "roomInfo": false
+    },
+    "iceServers": {
+        "requirePass": false,
+        "iceServers": [
+            {"urls": [
+                    "turn:pm.ineedadeveloper.com:3478"
+                ]}
+        ]
+    }
+}

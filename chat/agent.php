@@ -110,6 +110,6 @@ if (!isset($_GET["id"])) {
                 });
             });
         </script>
-        <script src="YOUR_DOMAIN/js/loader.v2.js" data-source_path="YOUR_DOMAIN/" ></script>
+        <script src="js/loader.v2.js" data-source_path="" ></script>
     </body>
 </html>

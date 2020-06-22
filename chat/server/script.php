@@ -923,7 +923,6 @@ function loginAgent($username, $pass) {
         $stmt = $pdo->prepare('SELECT * FROM ' . $dbPrefix . 'agents WHERE username = ? AND password=?');
         $stmt->execute([$username, md5($pass)]);
         $user = $stmt->fetch();
-
         if ($user) {
             $_SESSION["tenant"] = ($user['is_master']) ? 'lsv_mastertenant' : $user['tenant'];
             $_SESSION["username"] = $user['username'];

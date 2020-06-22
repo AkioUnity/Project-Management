@@ -91,7 +91,7 @@
     "meetingHasEnded" : "Meeting has ended",
     "turnOffCamera": "Turn off camera",
     "muteMe": "Mute me",
-    "endMeeting": "Leave meeting",
+    "endMeeting": "End Chat",
     "snapshotDownload": "Click to download snapshot",
     "getSnapshot": "Capture a snapshot",
     "videoFormatNotAllowed": "Unsupported video format or file is missing",
