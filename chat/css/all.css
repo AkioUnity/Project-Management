@@ -9279,9 +9279,13 @@ ul.flexbox {
 }
 /*new codes from amg*/
 #screenshareLi{
-    display: none!important;
+    /*display: none!important;*/
 }
 
 #formito_chat{
+    /*display: none!important;*/
+}
+
+#showProfile{
     display: none!important;
 }

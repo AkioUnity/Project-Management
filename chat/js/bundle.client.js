@@ -4130,20 +4130,25 @@ var publicRoomIdentifier, connection, videoConnection, screenConnection, tenant,
                 sessionId: sessionId,
                 roomId: roomId
             })
-        }, this.rejectCall = function () {
-            socket.emit(connection.socketCustomEvent, {
-                type: "rejectCall",
-                role: role,
-                tenant: tenant,
-                sessionId: sessionId,
-                roomId: roomId
-            })
-        }, this.stopRecording = function () {
-        }, this.getSessionId = function () {
-            return sessionId
-        }, this.getRemoteSessionId = function () {
-            return ""
-        }, this.getVideoStream = function () {
+        },
+            this.rejectCall = function () {
+                socket.emit(connection.socketCustomEvent, {
+                    type: "rejectCall",
+                    role: role,
+                    tenant: tenant,
+                    sessionId: sessionId,
+                    roomId: roomId
+                })
+            },
+            this.stopRecording = function () {
+            },
+            this.getSessionId = function () {
+                return sessionId
+            },
+            this.getRemoteSessionId = function () {
+                return ""
+            },
+            this.getVideoStream = function () {
             var e = !1;
             return videoConnection ? videoConnection.attachStreams.forEach(function (n) {
                 n.getVideoTracks().forEach(function (n) {
