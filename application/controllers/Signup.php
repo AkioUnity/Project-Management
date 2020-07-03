@@ -81,6 +81,10 @@ class Signup extends CI_Controller {
             return $error;
         }
     }
+//https://pm.ineedadeveloper.com/signup/create_account_from_MainServer
+    function create_account_from_MainServer(){
+        echo "created";
+    }
 
     function create_account() {
 
